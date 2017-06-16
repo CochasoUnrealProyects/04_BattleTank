@@ -2,13 +2,11 @@
 
 #pragma once
 
-#include "Tank.h"
 #include "GameFramework/PlayerController.h"
 #include "TankPlayerController.generated.h"	//Must be the last include
 
-/**
- * 
- */
+class ATank;
+
 UCLASS()
 class BATTLETANK_API ATankPlayerController : public APlayerController
 {
@@ -27,7 +25,7 @@ private:
 	float CrossHairYLocation = 0.3333;
 
 	UPROPERTY(EditAnywhere)
-	float LineTraceRange = 1000000;
+	float LineTraceRange = 100000;
 
 	void AimTowardsCrossHair();
 	ATank* GetControlledTank() const;
