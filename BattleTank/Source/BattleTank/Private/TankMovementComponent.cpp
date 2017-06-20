@@ -1,9 +1,8 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Cochanet S.A.
 
 #include "BattleTank.h"
 #include "TankTrack.h"
 #include "TankMovementComponent.h"
-
 
 void UTankMovementComponent::Initialise(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet)
 {
@@ -21,7 +20,6 @@ void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool
 
 	auto RightThrow = FVector::CrossProduct(TankForward, AIForwardIntention).Z;
 	IntendTurnRight(RightThrow);
-
 }
 
 void UTankMovementComponent::IntendMoveForward(float Throw)
@@ -30,7 +28,6 @@ void UTankMovementComponent::IntendMoveForward(float Throw)
 
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(Throw);
-	// TODO prevent double-speed due to double control use.
 }
 
 void UTankMovementComponent::IntendTurnRight(float Throw)
@@ -39,5 +36,4 @@ void UTankMovementComponent::IntendTurnRight(float Throw)
 
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(-Throw);
-	// TODO prevent double-speed due to double control use.
 }
