@@ -17,6 +17,10 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
+protected:
+	UFUNCTION(BlueprintCallable, Category = "Setup")
+	ATank* GetControlledTank() const;
+
 private:
 	UPROPERTY(EditDefaultsOnly)
 	float CrossHairXLocation = 0.5;
@@ -28,7 +32,6 @@ private:
 	float LineTraceRange = 100000;
 
 	void AimTowardsCrossHair();
-	ATank* GetControlledTank() const;
 
 	bool GetSightRayHitLocation(FVector& HitLocation) const;
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
