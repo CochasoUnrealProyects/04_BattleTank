@@ -10,18 +10,19 @@ ATank::ATank()
 {
 	PrimaryActorTick.bCanEverTick = false;
 
-	//auto tankname = GetName();
-	//UE_LOG(LogTemp, Warning, TEXT("%s COCHO: Tank C++ constuct"), *tankname);
+	//auto OurTankName = GetOwner()->GetName();
+	//auto BarrelLocation = Barrel->GetComponentLocation().ToString();
+	//UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s from %s"), *OurTankName, *HitLocation.ToString(), *BarrelLocation);
+	//UE_LOG(LogTemp, Warning, TEXT("Firing at %s"), LaunchSpeed);
 
 	//Moved to blueprint, dejo esto aca para tenerlo como ejemplo.
 	//TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
-
-	//TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
 }
 
 void ATank::BeginPlay()
 {
 	Super::BeginPlay();
+	TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
 }
 
 void ATank::AimAt(FVector HitLocation)
