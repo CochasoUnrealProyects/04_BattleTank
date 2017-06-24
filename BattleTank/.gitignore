@@ -74,6 +74,3 @@ Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 
-# Cosas grandes del starter content
-Content/StarterContent/Textures
-Content/StarterContent/HDRI
