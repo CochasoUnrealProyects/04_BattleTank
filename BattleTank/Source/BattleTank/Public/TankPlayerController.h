@@ -15,16 +15,18 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
-public:	
-	virtual void BeginPlay() override;
-
-	virtual void Tick(float DeltaTime) override;
-
 protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
 	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 
 private:
+	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
+	virtual void SetPawn(APawn* InPawn) override;
+
+	UFUNCTION()
+	void OnPossedTankDeath();
+
 	UPROPERTY(EditDefaultsOnly)
 	float CrossHairXLocation = 0.5;
 
