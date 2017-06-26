@@ -24,7 +24,7 @@ public:
 
 private:
 	ATank();
-
+	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	int32 StartingtHealth = 100;
